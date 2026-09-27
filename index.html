@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Global Stock Market Performance</title>
+
+  <!-- Pure.css for grid -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+
+  <!-- Vega + Vega-Lite + Embed -->
+  <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
+
+  <!-- Custom styles -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- HERO -->
+<div class="hero">
+  <div class="container">
+    <p class="kicker">FIT3179 · Data Visualisation 2</p>
+    <h1>Global Stock Market<br>Performance</h1>
+    <p class="tagline">How the world's markets compare — in size, growth, risk, and who really owns them</p>
+    <div class="pure-g kpi-strip">
+      <div class="pure-u-1 pure-u-md-1-4 kpi">
+        <div class="kpi-num">$69T</div>
+        <div class="kpi-label">US market cap</div>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-4 kpi">
+        <div class="kpi-num">109</div>
+        <div class="kpi-label">Countries tracked</div>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-4 kpi">
+        <div class="kpi-num">1,425%</div>
+        <div class="kpi-label">Hong Kong cap / GDP</div>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-4 kpi">
+        <div class="kpi-num">35 yrs</div>
+        <div class="kpi-label">of data (1990–2025)</div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<div class="container">
+
+  <!-- ACT I: How big is each market? -->
+  <div class="act">
+    <p class="act-num">Act I — The Scale</p>
+    <h2>How big is each market?</h2>
+    <p class="lead">Some countries' stock markets dwarf their economies. Others barely register. This map shows market capitalisation as a percentage of GDP — a measure of how financialised each economy is.</p>
+
+    <div class="pure-g">
+      <div class="pure-u-1 pure-u-md-2-3">
+        <div class="card">
+          <h3 class="chart-title">Market Capitalisation as % of GDP, 2024</h3>
+          <p class="chart-sub">Darker = larger market relative to economy</p>
+          <div id="choropleth-map" class="viz"></div>
+        </div>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-3">
+        <div class="insight">
+          <span class="insight-num">1,425%</span>
+          <b>Hong Kong's market cap</b> is 14× its GDP — a financial hub where the world's companies list, not a reflection of the local economy.
+        </div>
+        <div class="insight">
+          <b>The US ($69T)</b> accounts for roughly half of the world's total market capitalisation. No other country comes close.
+        </div>
+        <div class="insight">
+          <b>India ($10.6T)</b> has just overtaken Japan — a generational shift in the global pecking order.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACT II: Who grew fastest? -->
+  <div class="act">
+    <p class="act-num">Act II — The Growth</p>
+    <h2>Who grew fastest?</h2>
+    <p class="lead">Some markets have exploded over the last decade. Others have stagnated or shrunk. This map shows which countries delivered the strongest growth.</p>
+
+    <div class="pure-g">
+      <div class="pure-u-1 pure-u-md-2-3">
+        <div class="card">
+          <h3 class="chart-title">Market Cap Growth by Country</h3>
+          <p class="chart-sub">Circle size = growth magnitude</p>
+          <div id="symbol-map" class="viz"></div>
+          <!-- Placeholder: graduated symbol map -->
+        </div>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-3">
+        <div class="insight">
+          Insights for Act II go here.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACT III: How connected are markets? -->
+  <div class="act">
+    <p class="act-num">Act III — The Connections</p>
+    <h2>How connected are markets?</h2>
+    <p class="lead">When Wall Street sneezes, does the world catch a cold? This map shows how tightly linked the world's major indices are.</p>
+
+    <div class="pure-g">
+      <div class="pure-u-1 pure-u-md-2-3">
+        <div class="card">
+          <h3 class="chart-title">Market Correlations</h3>
+          <p class="chart-sub">Connection map or correlation heatmap</p>
+          <div id="connection-map" class="viz"></div>
+          <!-- Placeholder: connection/flow map -->
+        </div>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-3">
+        <div class="insight">
+          Insights for Act III go here.
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACT IV: What does each market look like? -->
+  <div class="act">
+    <p class="act-num">Act IV — The Shape</p>
+    <h2>What does each market look like?</h2>
+    <p class="lead">Beyond raw size, markets differ in structure — some are tech-heavy, others dominated by banks or resources.</p>
+
+    <div class="card">
+      <h3 class="chart-title">Index Trajectories — Normalised to 100</h3>
+      <p class="chart-sub">Small multiples, major markets since 2000</p>
+      <div id="small-multiples" class="viz"></div>
+      <!-- Placeholder: small multiples line charts -->
+    </div>
+  </div>
+
+  <!-- ACT V: Who owns the market? -->
+  <div class="act">
+    <p class="act-num">Act V — The Owners</p>
+    <h2>Who owns the market?</h2>
+    <p class="lead">In some countries, households own shares directly. In others — like Australia — pension systems do the heavy lifting.</p>
+
+    <div class="pure-g">
+      <div class="pure-u-1 pure-u-md-1-2">
+        <div class="card">
+          <h3 class="chart-title">Direct vs Total Equity Ownership</h3>
+          <p class="chart-sub">Slope chart — the pension effect</p>
+          <div id="slope-chart" class="viz"></div>
+          <!-- Placeholder: slope chart -->
+        </div>
+      </div>
+      <div class="pure-u-1 pure-u-md-1-2">
+        <div class="card">
+          <h3 class="chart-title">Pension Assets as % of GDP</h3>
+          <p class="chart-sub">Lollipop chart, ranked</p>
+          <div id="lollipop" class="viz"></div>
+          <!-- Placeholder: lollipop -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ACT VI: Risk vs Reward -->
+  <div class="act">
+    <p class="act-num">Act VI — The Trade-Off</p>
+    <h2>Risk vs reward</h2>
+    <p class="lead">Higher returns usually come with higher volatility. But some markets break that rule.</p>
+
+    <div class="card">
+      <h3 class="chart-title">Volatility vs Annualised Return</h3>
+      <p class="chart-sub">Connected scatter plot, one dot per country</p>
+      <div id="risk-return" class="viz"></div>
+      <!-- Placeholder: connected scatter -->
+    </div>
+  </div>
+
+  <!-- ACT VII: Global market share -->
+  <div class="act">
+    <p class="act-num">Act VII — The Pie</p>
+    <h2>Who gets the biggest slice?</h2>
+    <p class="lead">The US dominates, but the composition is shifting — emerging markets are taking a larger share every decade.</p>
+
+    <div class="card">
+      <h3 class="chart-title">Global Market Capitalisation by Country</h3>
+      <p class="chart-sub">Treemap — size = market cap</p>
+      <div id="treemap" class="viz"></div>
+      <!-- Placeholder: treemap -->
+    </div>
+  </div>
+
+  <!-- ACT VIII: Australia in context -->
+  <div class="act">
+    <p class="act-num">Act VIII — Australia in Context</p>
+    <h2>Small market, giant pension</h2>
+    <p class="lead">Australia's stock market is ~2% of the world total. But its pension system is one of the largest on earth — connecting everyday Australians to global markets without them knowing.</p>
+
+    <div class="card">
+      <h3 class="chart-title">Australia's Position</h3>
+      <p class="chart-sub">Summary panel with annotations</p>
+      <div id="australia-context" class="viz"></div>
+      <!-- Placeholder: summary viz -->
+    </div>
+  </div>
+
+  <!-- CLOSER -->
+  <div class="pullstat">
+    <div class="pullstat-big">The world's money has a map.</div>
+    <div class="pullstat-ctx">From New York to Mumbai, from pension funds to day traders — where capital flows, economies follow.</div>
+  </div>
+
+</div>
+
+<!-- FOOTER -->
+<div class="footer">
+  <div class="container">
+    <b>Sources:</b> World Bank Open Data (Market capitalisation, listed domestic companies) · MSCI Country Index Factsheets · OECD Pension Statistics · World Federation of Exchanges<br>
+    <b>Caveats:</b> Market cap data coverage varies by country and year · Pension asset allocation estimates are approximate · Currency effects not adjusted<br>
+    <b>Author:</b> Adam Ali · Monash University, FIT3179 Semester 2 2026 · AI tools used for text refinement and layout feedback.
+  </div>
+</div>
+
+<script>
+  // Embed Vega-Lite specs
+  // Each spec is loaded from a separate JSON file for readability (as per assignment requirement)
+
+  const embedOpts = {
+    actions: false,
+    renderer: 'svg',
+    theme: 'default'
+  };
+
+  // Act I: Choropleth
+  vegaEmbed('#choropleth-map', 'js/vega-specs/choropleth-market-cap.json', embedOpts)
+    .catch(err => console.warn('Choropleth:', err));
+
+  // Add more embeds as you build each spec:
+  // vegaEmbed('#symbol-map', 'js/vega-specs/symbol-map-returns.json', embedOpts);
+  // vegaEmbed('#connection-map', 'js/vega-specs/connection-map.json', embedOpts);
+  // vegaEmbed('#small-multiples', 'js/vega-specs/small-multiples.json', embedOpts);
+  // vegaEmbed('#slope-chart', 'js/vega-specs/slope-chart.json', embedOpts);
+  // vegaEmbed('#lollipop', 'js/vega-specs/lollipop.json', embedOpts);
+  // vegaEmbed('#risk-return', 'js/vega-specs/risk-return.json', embedOpts);
+  // vegaEmbed('#treemap', 'js/vega-specs/treemap.json', embedOpts);
+  // vegaEmbed('#australia-context', 'js/vega-specs/australia-context.json', embedOpts);
+</script>
+
+</body>
+</html>

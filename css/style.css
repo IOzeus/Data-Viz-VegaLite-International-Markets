@@ -1,0 +1,225 @@
+/* ============================================
+   FIT3179 DV2 — Global Stock Market Performance
+   Color palette (colorblind-safe):
+     Dark green:  #0d3b2e  (primary/headings)
+     Gold:        #d4af37  (accents/highlights)
+     Blue:        #2166ac  (positive/gains)
+     Orange:      #d95f02  (negative/losses)
+     Purple:      #7570b3  (accent)
+     Cream bg:    #faf7f0
+   ============================================ */
+
+/* ---------- BASE ---------- */
+* { box-sizing: border-box; }
+
+body {
+  background: #faf7f0;
+  color: #000;
+  font-family: Verdana, 'Helvetica Neue', Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+.container {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+/* ---------- HERO ---------- */
+.hero {
+  background: #0d3b2e;
+  color: #faf7f0;
+  padding: 60px 24px 50px;
+  text-align: center;
+}
+
+.hero .kicker {
+  color: #d4af37;
+  text-transform: uppercase;
+  letter-spacing: 4px;
+  font-size: 12px;
+  margin: 0 0 14px;
+}
+
+.hero h1 {
+  font-family: Georgia, 'Times New Roman', serif;
+  font-size: 48px;
+  margin: 0 0 12px;
+  color: #faf7f0;
+  line-height: 1.05;
+}
+
+.hero .tagline {
+  font-family: Georgia, serif;
+  font-style: italic;
+  font-size: 17px;
+  color: #d4af37;
+  margin: 0 0 34px;
+}
+
+/* ---------- KPI STRIP ---------- */
+.kpi-strip {
+  max-width: 860px;
+  margin: 0 auto;
+  border-top: 1px solid #d4af37;
+  border-bottom: 1px solid #d4af37;
+}
+
+.kpi {
+  padding: 18px 10px;
+  text-align: center;
+}
+
+.kpi-num {
+  font-family: Georgia, serif;
+  font-size: 30px;
+  color: #faf7f0;
+}
+
+.kpi-label {
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  color: #9fc4b5;
+  margin-top: 4px;
+}
+
+/* ---------- ACTS ---------- */
+.act {
+  margin-top: 60px;
+}
+
+.act-num {
+  font-family: Georgia, serif;
+  font-size: 13px;
+  color: #d4af37;
+  text-transform: uppercase;
+  letter-spacing: 3px;
+  margin: 0 0 4px;
+}
+
+h2 {
+  font-family: Georgia, serif;
+  font-size: 28px;
+  margin: 6px 0 8px;
+  color: #0d3b2e;
+}
+
+.lead {
+  font-size: 14px;
+  line-height: 1.65;
+  max-width: 720px;
+  margin: 0 0 20px;
+  color: #222;
+}
+
+/* ---------- CARDS ---------- */
+.card {
+  background: #fff;
+  border: 1px solid #e2ddd0;
+  border-top: 4px solid #0d3b2e;
+  padding: 20px;
+  margin-bottom: 12px;
+}
+
+.chart-title {
+  font-family: Georgia, serif;
+  font-size: 15px;
+  margin: 0 0 2px;
+  color: #000;
+}
+
+.chart-sub {
+  font-size: 11px;
+  color: #666;
+  margin: 0 0 14px;
+}
+
+/* ---------- VEGA VIZ CONTAINERS ---------- */
+.viz {
+  width: 100%;
+  min-height: 300px;
+}
+
+/* ---------- INSIGHT BOXES ---------- */
+.insight {
+  background: #f7f5ef;
+  border-left: 3px solid #0d3b2e;
+  padding: 12px 14px;
+  margin-bottom: 12px;
+  font-size: 12px;
+  line-height: 1.6;
+  color: #333;
+}
+
+.insight b {
+  color: #0d3b2e;
+}
+
+.insight-num {
+  font-family: Georgia, serif;
+  font-size: 22px;
+  color: #0d3b2e;
+  display: block;
+  margin-bottom: 4px;
+}
+
+/* ---------- ANNOTATION BOX ---------- */
+.annot {
+  background: #faf3dd;
+  border-left: 4px solid #d4af37;
+  padding: 10px 14px;
+  font-size: 12px;
+  margin-top: 14px;
+  color: #333;
+  line-height: 1.5;
+}
+
+/* ---------- PULL STAT ---------- */
+.pullstat {
+  text-align: center;
+  margin: 50px auto;
+  max-width: 640px;
+}
+
+.pullstat-big {
+  font-family: Georgia, serif;
+  font-size: 40px;
+  color: #0d3b2e;
+}
+
+.pullstat-ctx {
+  font-size: 14px;
+  color: #555;
+  margin-top: 6px;
+}
+
+/* ---------- FOOTER ---------- */
+.footer {
+  background: #0d3b2e;
+  color: #9fc4b5;
+  margin-top: 70px;
+  padding: 34px 24px;
+  font-size: 11px;
+  line-height: 1.7;
+}
+
+.footer b {
+  color: #faf7f0;
+}
+
+/* ---------- GRID SPACING ---------- */
+.pure-g > [class*="pure-u"] {
+  padding: 0 8px;
+}
+
+/* ---------- RESPONSIVE ---------- */
+@media (max-width: 768px) {
+  .hero h1 { font-size: 32px; }
+  .kpi-num { font-size: 24px; }
+  h2 { font-size: 22px; }
+  .pure-g > [class*="pure-u"] { padding: 0 4px; }
+}
