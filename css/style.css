@@ -1,214 +1,300 @@
 /* ============================================
-   FIT3179 DV2 — Global Stock Market Performance
-   Color palette (colorblind-safe):
-     Dark green:  #0d3b2e  (primary/headings)
-     Gold:        #d4af37  (accents/highlights)
-     Blue:        #2166ac  (positive/gains)
-     Orange:      #d95f02  (negative/losses)
-     Purple:      #7570b3  (accent)
-     Cream bg:    #faf7f0
+   DV2 — Global Stock Market Performance
+   Palette: Navy #1B2838, Amber #E8A838
+   Data: Blue #2166ac, Orange #d95f02, Purple #7570b3
+   Font: Inter (body), Playfair Display (display)
    ============================================ */
 
-/* ---------- BASE ---------- */
 * { box-sizing: border-box; }
 
 body {
-  background: #faf7f0;
-  color: #000;
-  font-family: Verdana, 'Helvetica Neue', Arial, sans-serif;
+  background: #ffffff;
+  color: #1a1a1a;
+  font-family: 'Inter', -apple-system, sans-serif;
   margin: 0;
   padding: 0;
-  font-size: 13px;
+  font-size: 14px;
   line-height: 1.6;
 }
 
 .container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 28px;
+}
+
+/* ---------- HERO MAP ---------- */
+.hero-map {
+  position: relative;
+  background: #1B2838;
+  overflow: hidden;
+}
+
+.hero-overlay {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 48px 24px 20px;
+  color: #ffffff;
+}
+
+.eyebrow {
+  font-size: 11px;
+  letter-spacing: 4px;
+  text-transform: uppercase;
+  color: #E8A838;
+  display: block;
+  margin-bottom: 12px;
+}
+
+.hero-map h1 {
+  font-family: 'Playfair Display', Georgia, serif;
+  font-size: 52px;
+  font-weight: 700;
+  line-height: 1.05;
+  margin: 0 0 14px;
+  color: #ffffff;
+}
+
+.hero-sub {
+  font-size: 16px;
+  font-weight: 300;
+  color: #b0bec5;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+.hero-viz {
+  position: relative;
+  z-index: 1;
   max-width: 1100px;
   margin: 0 auto;
-  padding: 0 24px;
+  padding: 0 20px 10px;
 }
 
-/* ---------- HERO ---------- */
-.hero {
-  background: #0d3b2e;
-  color: #faf7f0;
-  padding: 60px 24px 50px;
+.hero-caption {
   text-align: center;
+  font-size: 11px;
+  color: #607d8b;
+  padding: 6px 0 14px;
+  margin: 0;
+  background: #1B2838;
 }
 
-.hero .kicker {
-  color: #d4af37;
-  text-transform: uppercase;
-  letter-spacing: 4px;
-  font-size: 12px;
-  margin: 0 0 14px;
+/* ---------- STAT STRIP ---------- */
+.stat-strip {
+  background: #f5f7fa;
+  border-top: 3px solid #E8A838;
+  border-bottom: 1px solid #e0e4e8;
+  padding: 20px 0;
 }
 
-.hero h1 {
-  font-family: Georgia, 'Times New Roman', serif;
-  font-size: 48px;
-  margin: 0 0 12px;
-  color: #faf7f0;
-  line-height: 1.05;
-}
-
-.hero .tagline {
-  font-family: Georgia, serif;
-  font-style: italic;
-  font-size: 17px;
-  color: #d4af37;
-  margin: 0 0 34px;
-}
-
-/* ---------- KPI STRIP ---------- */
-.kpi-strip {
-  max-width: 860px;
-  margin: 0 auto;
-  border-top: 1px solid #d4af37;
-  border-bottom: 1px solid #d4af37;
-}
-
-.kpi {
-  padding: 18px 10px;
+.stat {
   text-align: center;
+  padding: 10px 8px;
 }
 
-.kpi-num {
-  font-family: Georgia, serif;
-  font-size: 30px;
-  color: #faf7f0;
+.stat-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 26px;
+  font-weight: 700;
+  color: #1B2838;
 }
 
-.kpi-label {
+.stat-label {
   font-size: 10px;
   text-transform: uppercase;
   letter-spacing: 1px;
-  color: #9fc4b5;
-  margin-top: 4px;
+  color: #78909c;
+  margin-top: 2px;
 }
 
-/* ---------- ACTS ---------- */
-.act {
-  margin-top: 60px;
+/* ---------- SECTIONS ---------- */
+.section {
+  margin-top: 64px;
+  padding-bottom: 20px;
 }
 
-.act-num {
-  font-family: Georgia, serif;
-  font-size: 13px;
-  color: #d4af37;
-  text-transform: uppercase;
-  letter-spacing: 3px;
-  margin: 0 0 4px;
+.section-header {
+  margin-bottom: 28px;
+  border-left: 4px solid #E8A838;
+  padding-left: 20px;
+}
+
+.section-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 14px;
+  font-weight: 700;
+  color: #E8A838;
+  letter-spacing: 2px;
 }
 
 h2 {
-  font-family: Georgia, serif;
-  font-size: 28px;
-  margin: 6px 0 8px;
-  color: #0d3b2e;
+  font-family: 'Playfair Display', serif;
+  font-size: 30px;
+  font-weight: 700;
+  margin: 4px 0 8px;
+  color: #1B2838;
+  line-height: 1.15;
 }
 
-.lead {
-  font-size: 14px;
-  line-height: 1.65;
-  max-width: 720px;
-  margin: 0 0 20px;
-  color: #222;
-}
-
-/* ---------- CARDS ---------- */
-.card {
-  background: #fff;
-  border: 1px solid #e2ddd0;
-  border-top: 4px solid #0d3b2e;
-  padding: 20px;
-  margin-bottom: 12px;
-}
-
-.chart-title {
-  font-family: Georgia, serif;
+.section-lead {
   font-size: 15px;
+  font-weight: 300;
+  line-height: 1.7;
+  color: #37474f;
+  max-width: 700px;
+  margin: 0;
+}
+
+/* ---------- VIZ CARDS ---------- */
+.viz-card {
+  background: #ffffff;
+  border: 1px solid #e8ecf0;
+  border-radius: 6px;
+  padding: 20px;
+  margin-bottom: 16px;
+  box-shadow: 0 1px 3px rgba(0,0,0,0.04);
+}
+
+.viz-card.full-width {
+  margin-left: -8px;
+  margin-right: -8px;
+}
+
+.viz-card h3 {
+  font-family: 'Inter', sans-serif;
+  font-size: 15px;
+  font-weight: 600;
   margin: 0 0 2px;
-  color: #000;
+  color: #1B2838;
 }
 
-.chart-sub {
+.viz-note {
   font-size: 11px;
-  color: #666;
-  margin: 0 0 14px;
+  color: #90a4ae;
+  margin: 0 0 16px;
 }
 
-/* ---------- VEGA VIZ CONTAINERS ---------- */
 .viz {
   width: 100%;
-  min-height: 300px;
+  min-height: 320px;
 }
 
-/* ---------- INSIGHT BOXES ---------- */
-.insight {
-  background: #f7f5ef;
-  border-left: 3px solid #0d3b2e;
-  padding: 12px 14px;
-  margin-bottom: 12px;
+.viz-tall {
+  min-height: 440px;
+}
+
+/* ---------- CONTEXT BOXES ---------- */
+.context-col {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  padding-top: 8px;
+}
+
+.context-box {
+  background: #f8f9fb;
+  border-left: 3px solid #1B2838;
+  padding: 14px 16px;
+  font-size: 13px;
+  line-height: 1.55;
+  color: #37474f;
+  border-radius: 0 4px 4px 0;
+}
+
+.context-box.accent {
+  border-left-color: #E8A838;
+  background: #fef9ef;
+}
+
+.context-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 28px;
+  font-weight: 700;
+  color: #1B2838;
+  margin-bottom: 4px;
+}
+
+.context-box strong {
+  color: #1B2838;
+}
+
+/* ---------- CALLOUT ---------- */
+.callout {
+  background: #1B2838;
+  color: #ffffff;
+  padding: 36px 40px;
+  border-radius: 6px;
+  text-align: center;
+  margin: 32px 0;
+}
+
+.callout-num {
+  font-family: 'Playfair Display', serif;
+  font-size: 42px;
+  font-weight: 700;
+  color: #E8A838;
+  margin-bottom: 8px;
+}
+
+.callout p {
+  font-size: 15px;
+  font-weight: 300;
+  max-width: 600px;
+  margin: 0 auto;
+  line-height: 1.7;
+}
+
+.callout cite {
+  display: block;
+  font-size: 11px;
+  color: #78909c;
+  margin-top: 10px;
+  font-style: normal;
+}
+
+/* ---------- CLOSER ---------- */
+.closer {
+  background: #f5f7fa;
+  text-align: center;
+  padding: 70px 24px;
+  margin-top: 60px;
+}
+
+.closer-title {
+  font-family: 'Playfair Display', serif;
+  font-size: 36px;
+  color: #1B2838;
+  margin: 0 0 12px;
+  line-height: 1.2;
+}
+
+.closer-sub {
+  font-size: 15px;
+  color: #607d8b;
+  font-weight: 300;
+  max-width: 580px;
+  margin: 0 auto;
+}
+
+/* ---------- FOOTER ---------- */
+footer {
+  background: #1B2838;
+  color: #90a4ae;
+  padding: 36px 24px;
   font-size: 12px;
-  line-height: 1.6;
-  color: #333;
+  line-height: 1.7;
 }
 
-.insight b {
-  color: #0d3b2e;
-}
-
-.insight-num {
-  font-family: Georgia, serif;
-  font-size: 22px;
-  color: #0d3b2e;
+footer strong {
+  color: #ffffff;
   display: block;
   margin-bottom: 4px;
 }
 
-/* ---------- ANNOTATION BOX ---------- */
-.annot {
-  background: #faf3dd;
-  border-left: 4px solid #d4af37;
-  padding: 10px 14px;
-  font-size: 12px;
-  margin-top: 14px;
-  color: #333;
-  line-height: 1.5;
-}
-
-/* ---------- PULL STAT ---------- */
-.pullstat {
-  text-align: center;
-  margin: 50px auto;
-  max-width: 640px;
-}
-
-.pullstat-big {
-  font-family: Georgia, serif;
-  font-size: 40px;
-  color: #0d3b2e;
-}
-
-.pullstat-ctx {
-  font-size: 14px;
-  color: #555;
-  margin-top: 6px;
-}
-
-/* ---------- FOOTER ---------- */
-.footer {
-  background: #0d3b2e;
-  color: #9fc4b5;
-  margin-top: 70px;
-  padding: 34px 24px;
-  font-size: 11px;
-  line-height: 1.7;
-}
-
-.footer b {
-  color: #faf7f0;
+footer p {
+  margin: 0 0 12px;
 }
 
 /* ---------- GRID SPACING ---------- */
@@ -218,8 +304,10 @@ h2 {
 
 /* ---------- RESPONSIVE ---------- */
 @media (max-width: 768px) {
-  .hero h1 { font-size: 32px; }
-  .kpi-num { font-size: 24px; }
-  h2 { font-size: 22px; }
-  .pure-g > [class*="pure-u"] { padding: 0 4px; }
+  .hero-map h1 { font-size: 32px; }
+  .stat-num { font-size: 22px; }
+  h2 { font-size: 24px; }
+  .callout { padding: 28px 20px; }
+  .callout-num { font-size: 32px; }
+  .closer-title { font-size: 28px; }
 }
