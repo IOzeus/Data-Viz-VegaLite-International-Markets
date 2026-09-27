@@ -2,7 +2,7 @@
 
 Interactive data visualisation exploring how the world's stock markets compare in size, growth, risk, and ownership structure.
 
-**Live site:** `https://adam-ali6869.github.io/Data-Viz-VegaLite-International-Markets/`
+**Live site:** `https://iozeus.github.io/Data-Viz-VegaLite-International-Markets/`
 
 ## Data Sources
 1. **World Bank Open Data** — Market capitalisation of listed domestic companies (% of GDP and current US$), 1990–2025
@@ -15,6 +15,6 @@ Interactive data visualisation exploring how the world's stock markets compare i
 - **GitHub Pages** for hosting
 
 ## Author
-Adam Ali — Monash University, FIT3179 Semester 2 2026
+Ali Alkhatib — Monash University, FIT3179 Semester 2 2026
 
 AI tools (Claude) used for text refinement, layout feedback, and data cleaning — acknowledged per unit policy.
