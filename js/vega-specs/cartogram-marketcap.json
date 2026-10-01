@@ -1,0 +1,83 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "width": "container",
+  "height": 380,
+  "title": {
+    "text": "Market Capitalisation ($B)",
+    "subtitle": "Country size = stock market value",
+    "font": "Inter",
+    "fontSize": 16,
+    "subtitleFont": "Inter",
+    "subtitleFontSize": 12,
+    "color": "#1B2838"
+  },
+  "projection": {
+    "type": "equalEarth"
+  },
+  "data": {
+    "url": "data/cartogram-marketcap-data.json",
+    "format": {
+      "type": "json",
+      "property": "features"
+    }
+  },
+  "mark": {
+    "type": "geoshape",
+    "stroke": "#fff",
+    "strokeWidth": 0.5
+  },
+  "encoding": {
+    "shape": {
+      "field": "geometry",
+      "type": "geojson"
+    },
+    "color": {
+      "field": "properties.MarketCap_Billion_USD",
+      "type": "quantitative",
+      "scale": {
+        "scheme": "oranges",
+        "domain": [
+          0,
+          5000
+        ]
+      },
+      "legend": {
+        "title": "Market Cap ($B)",
+        "orient": "bottom",
+        "direction": "horizontal"
+      }
+    },
+    "tooltip": [
+      {
+        "field": "properties.NAME",
+        "type": "nominal",
+        "title": "Country"
+      },
+      {
+        "field": "properties.MarketCap_Billion_USD",
+        "type": "quantitative",
+        "title": "Market Cap ($B)",
+        "format": ",.0f"
+      },
+      {
+        "field": "properties.GDP_B",
+        "type": "quantitative",
+        "title": "GDP ($B)",
+        "format": ",.0f"
+      },
+      {
+        "field": "properties.MarketCap_GDP_Pct",
+        "type": "quantitative",
+        "title": "Cap/GDP %",
+        "format": ".0f"
+      }
+    ]
+  },
+  "config": {
+    "view": {
+      "stroke": null
+    },
+    "background": "#ffffff",
+    "font": "Inter"
+  }
+}

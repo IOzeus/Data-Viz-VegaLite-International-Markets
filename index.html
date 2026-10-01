@@ -3,170 +3,46 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Where the World's Money Lives — Global Stock Market Performance</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,700;1,400&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/pure-min.css">
-  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/purecss@3.0.0/build/grids-responsive-min.css">
+  <title>Where the World's Money Lives</title>
+  <link rel="stylesheet" href="css/style.css">
   <script src="https://cdn.jsdelivr.net/npm/vega@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-lite@5"></script>
   <script src="https://cdn.jsdelivr.net/npm/vega-embed@6"></script>
-  <link rel="stylesheet" href="css/style.css">
 </head>
-<body>
+<body> 
 
-<section class="hero-map">
-  <div class="hero-overlay">
-    <span class="eyebrow">FIT3179 · Data Visualisation 2</span>
-    <h1>Where the World's<br>Money Lives</h1>
-    <p class="hero-sub">A visual guide to global stock market performance — size, growth, risk, and who really owns the market</p>
+<!-- ===== MASTHEAD ===== -->
+<div class="grid">
+  <div class="span-8 masthead">
+    <div class="meta">FIT3179 · Data Visualisation 2 · 2026</div>
+    <div class="title">Where the<br>World's Money<br>Lives</div>
+    <div class="subtitle">How 109 countries' stock markets compare — in size, growth, structure, and who actually owns them.</div>
   </div>
-  <div id="hero-choropleth" class="hero-viz"></div>
-  <p class="hero-caption">Market capitalisation as % of GDP, 2024 · Hover for details · Source: World Bank</p>
-</section>
-
-<section class="stat-strip">
-  <div class="container">
-    <div class="pure-g">
-      <div class="pure-u-1 pure-u-md-1-5 stat"><div class="stat-num">$105T+</div><div class="stat-label">Global market cap</div></div>
-      <div class="pure-u-1 pure-u-md-1-5 stat"><div class="stat-num">~50%</div><div class="stat-label">Held by the US alone</div></div>
-      <div class="pure-u-1 pure-u-md-1-5 stat"><div class="stat-num">109</div><div class="stat-label">Countries with listed markets</div></div>
-      <div class="pure-u-1 pure-u-md-1-5 stat"><div class="stat-num">India</div><div class="stat-label">Just overtook Japan</div></div>
-      <div class="pure-u-1 pure-u-md-1-5 stat"><div class="stat-num">5.9%→58%</div><div class="stat-label">Australia's real equity exposure</div></div>
+  <div class="span-4 masthead" style="display:flex;flex-direction:column;justify-content:flex-end;gap:20px;padding-bottom:8px;">
+    <div>
+      <div class="big-num">$105T</div>
+      <div class="big-num-label">Global market capitalisation</div>
+    </div>
+    <div>
+      <div class="big-num" style="font-size:44px;">109</div>
+      <div class="big-num-label">Countries with listed markets</div>
     </div>
   </div>
-</section>
-
-<div class="container">
-
-  <section class="section">
-    <div class="section-header">
-      <span class="section-num">01</span>
-      <h2>The US dominates — but the map is shifting</h2>
-      <p class="section-lead">Half of the world's stock market value sits in one country. But emerging markets — led by India — are rewriting the rankings.</p>
-    </div>
-    <div class="pure-g">
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div class="viz-card"><h3>Global Market Share</h3><p class="viz-note">Each rectangle = one country, sized by market capitalisation ($B)</p><div id="treemap" class="viz"></div></div>
-      </div>
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div class="viz-card"><h3>Top 15 Markets by Size</h3><p class="viz-note">Market capitalisation, billions USD, 2024</p><div id="top15-bar" class="viz"></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-header">
-      <span class="section-num">02</span>
-      <h2>Who grew fastest?</h2>
-      <p class="section-lead">Over the last decade, some markets have exploded while others stagnated. Geography tells part of the story.</p>
-    </div>
-    <div class="viz-card full-width"><h3>Market Cap Growth by Country</h3><p class="viz-note">Proportional symbols — circle size = absolute growth, colour = growth rate</p><div id="symbol-map" class="viz viz-tall"></div></div>
-    <div class="pure-g">
-      <div class="pure-u-1 pure-u-md-2-3">
-        <div class="viz-card"><h3>Ranking Shifts — Who's Rising, Who's Falling?</h3><p class="viz-note">Bump chart: top 15 countries by market cap rank, 2015–2024</p><div id="bump-chart" class="viz"></div></div>
-      </div>
-      <div class="pure-u-1 pure-u-md-1-3 context-col">
-        <div class="context-box"><div class="context-num">$10.6T</div><p><strong>India overtook Japan</strong> in 2024 — a decade ago it was barely in the top 10.</p></div>
-        <div class="context-box"><p><strong>China peaked in 2021</strong> and has since lost over $5T — regulatory crackdowns and property crisis.</p></div>
-        <div class="context-box accent"><p><strong>Australia ($2T)</strong> sits mid-table — but its true equity exposure is far larger than this number.</p></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-header">
-      <span class="section-num">03</span>
-      <h2>When one market falls, do they all?</h2>
-      <p class="section-lead">Markets are more connected than ever. A crash on Wall Street ripples across time zones within hours.</p>
-    </div>
-    <div class="pure-g">
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div class="viz-card"><h3>Market Connections</h3><p class="viz-note">Flow map — line thickness = correlation strength</p><div id="connection-map" class="viz"></div></div>
-      </div>
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div class="viz-card"><h3>Correlation Matrix</h3><p class="viz-note">How tightly major indices move together</p><div id="correlation-heatmap" class="viz"></div></div>
-      </div>
-    </div>
-  </section>
-
-  <section class="section">
-    <div class="section-header">
-      <span class="section-num">04</span>
-      <h2>Not all markets are built the same</h2>
-      <p class="section-lead">The US is a tech market. Australia is banks and mining. These structural differences shape risk and return.</p>
-    </div>
-    <div class="viz-card full-width"><h3>Index Trajectories — Normalised to 100</h3><p class="viz-note">Small multiples · Each panel = one major market</p><div id="small-multiples" class="viz viz-tall"></div></div>
-    <div class="viz-card full-width"><h3>Sector Composition by Country</h3><p class="viz-note">What each market is actually made of — select a country to compare</p><div id="sector-composition" class="viz"></div></div>
-  </section>
-
-  <section class="section">
-    <div class="section-header">
-      <span class="section-num">05</span>
-      <h2>The shares you don't know you own</h2>
-      <p class="section-lead">Australians rank dead last in the OECD for direct share ownership. But when super is counted, we jump to second in the world.</p>
-    </div>
-    <div class="pure-g">
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div class="viz-card"><h3>Direct vs Total Equity Ownership</h3><p class="viz-note">Left = direct · Right = including pensions · Lines that jump = pension-heavy</p><div id="slope-chart" class="viz"></div></div>
-      </div>
-      <div class="pure-u-1 pure-u-md-1-2">
-        <div class="viz-card"><h3>Pension Assets as % of GDP</h3><p class="viz-note">Ranked by country</p><div id="lollipop" class="viz"></div></div>
-      </div>
-    </div>
-    <div class="callout"><div class="callout-num">5.9% → 57.9%</div><p>Australia's household equity exposure when super is included. Most Australians are deeply invested in the stock market — they just don't know it.</p><cite>Financial Times / OECD, 2025</cite></div>
-  </section>
-
-  <section class="section">
-    <div class="section-header">
-      <span class="section-num">06</span>
-      <h2>More risk, more reward?</h2>
-      <p class="section-lead">The textbook says higher returns require higher volatility. Some markets break that rule.</p>
-    </div>
-    <div class="viz-card full-width"><h3>Risk vs Return by Country</h3><p class="viz-note">Each dot = one country · X = volatility · Y = return · Select a region to highlight</p><div id="risk-return" class="viz viz-tall"></div></div>
-  </section>
-
-  <section class="section">
-    <div class="section-header">
-      <span class="section-num">07</span>
-      <h2>Small market, giant pension</h2>
-      <p class="section-lead">Australia's stock exchange is ~2% of the world total. But its $4.4T super system makes it one of the most financialised economies on earth.</p>
-    </div>
-    <div class="pure-g">
-      <div class="pure-u-1 pure-u-md-1-3">
-        <div class="context-box"><div class="context-num">~2%</div><p>Australia's share of global market cap</p></div>
-        <div class="context-box"><div class="context-num">~130%</div><p>Super assets as % of GDP</p></div>
-        <div class="context-box accent"><div class="context-num">$4.44T</div><p>Total super — larger than the ASX itself</p></div>
-      </div>
-      <div class="pure-u-1 pure-u-md-2-3">
-        <div class="viz-card"><h3>Australia's Market vs GDP Over Time</h3><p class="viz-note">Interactive: select year range</p><div id="australia-timeline" class="viz"></div></div>
-      </div>
-    </div>
-  </section>
-
 </div>
 
-<section class="closer">
-  <div class="container">
-    <h2 class="closer-title">The world's money has a map.<br>Now you can read it.</h2>
-    <p class="closer-sub">From Wall Street to Mumbai, from pension funds to day traders — where capital flows, economies follow.</p>
+<!-- ===== MAP 1: Cartograms ===== -->
+<div class="grid">
+  <hr class="divider-thick">
+  <div class="span-4">
+    <div class="section-label">Market Size</div>
+    <h2>Some markets dwarf their own economies</h2>
+    <p class="body-text">Market capitalisation as a share of GDP reveals how financialised each economy is. Hong Kong's market is 14× its GDP — a hub where the world lists. The US, at 224%, is the largest in absolute terms.</p>
+    <div class="annotation"><strong>Hover</strong> any country for its market cap in dollars and as a percentage of GDP.</div>
   </div>
-</section>
-
-<footer>
-  <div class="container">
-    <div class="pure-g">
-      <div class="pure-u-1 pure-u-md-1-3"><p><strong>Sources</strong><br>World Bank Open Data · MSCI Index Factsheets · OECD Pension Statistics · World Federation of Exchanges · FT/OECD 2025</p></div>
-      <div class="pure-u-1 pure-u-md-1-3"><p><strong>Methodology</strong><br>Market cap in current USD. Pension allocations estimated. Currency effects unadjusted. Coverage varies by country/year.</p></div>
-      <div class="pure-u-1 pure-u-md-1-3"><p><strong>Author</strong><br>Adam Ali · Monash University<br>FIT3179 Semester 2, 2026<br>AI tools used for text refinement and data cleaning.</p></div>
-    </div>
+  <div class="span-8">
+    <div id="cartogram-gdp" class="viz viz-lg"></div>
+    <p class="caption">GDP, 2024 · Source: World Bank</p>
+    <div id="cartogram-mcap" class="viz viz-lg"></div>
+    <p class="caption">Market capitalisation, 2024 · Source: World Bank</p>
   </div>
-</footer>
-
-<script>
-  const embedOpts = {actions: false, renderer: 'svg'};
-  vegaEmbed('#hero-choropleth', 'js/vega-specs/choropleth-market-cap.json', embedOpts).catch(err => console.warn('Choropleth:', err));
-</script>
-
-</body>
-</html>
+</div>
